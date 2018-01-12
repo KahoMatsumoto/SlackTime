@@ -14,6 +14,7 @@
 		27DF467920089FC700A4BE49 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27DF467720089FC700A4BE49 /* LaunchScreen.storyboard */; };
 		27DF468420089FC700A4BE49 /* SlackTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF468320089FC700A4BE49 /* SlackTimeTests.swift */; };
 		27DF468F20089FC700A4BE49 /* SlackTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF468E20089FC700A4BE49 /* SlackTimeUITests.swift */; };
+		27DF469F2008A9B700A4BE49 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF469E2008A9B700A4BE49 /* NextViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		27DF468A20089FC700A4BE49 /* SlackTimeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlackTimeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27DF468E20089FC700A4BE49 /* SlackTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackTimeUITests.swift; sourceTree = "<group>"; };
 		27DF469020089FC700A4BE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27DF469E2008A9B700A4BE49 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				27DF466E20089FC700A4BE49 /* AppDelegate.swift */,
 				27DF467020089FC700A4BE49 /* ViewController.swift */,
+				27DF469E2008A9B700A4BE49 /* NextViewController.swift */,
 				27DF467220089FC700A4BE49 /* Main.storyboard */,
 				27DF467520089FC700A4BE49 /* Assets.xcassets */,
 				27DF467720089FC700A4BE49 /* LaunchScreen.storyboard */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27DF467120089FC700A4BE49 /* ViewController.swift in Sources */,
+				27DF469F2008A9B700A4BE49 /* NextViewController.swift in Sources */,
 				27DF466F20089FC700A4BE49 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +431,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FJV559UR87;
 				INFOPLIST_FILE = SlackTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Km.SlackTime;
@@ -441,6 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FJV559UR87;
 				INFOPLIST_FILE = SlackTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Km.SlackTime;
