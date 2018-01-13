@@ -48,9 +48,14 @@ class NextViewController: UIViewController, AVSpeechSynthesizerDelegate{
         // Do any additional setup after loading the view.
         
         let datePicker = UIDatePicker()
+        let calendar = Calendar.current
+        let oneHourNext = calendar.date(byAdding: .hour, value: 1, to: Date())!
+        let tommorow = calendar.date(byAdding: .day, value: 1, to: Date())!
+        
         
         datePicker.datePickerMode = UIDatePickerMode.time
-        //datePicker.maximumDate = 
+        datePicker.minimumDate = oneHourNext
+        datePicker.maximumDate = tommorow
         
         datePicker.addTarget(self, action: #selector(NextViewController.datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
         
@@ -74,8 +79,7 @@ class NextViewController: UIViewController, AVSpeechSynthesizerDelegate{
         
 
         
-        let second = sender.date.secondsFrom()
-        //Timer.scheduledTimer(timeInterval: TimeInterval(second), target: self, selector: #selector(self.displayAlert), userInfo: nil, repeats: false)
+        let second = sender.date.secondsFrom() - 3600
         self.timer = Timer.scheduledTimer(timeInterval: TimeInterval(second), target: self, selector: #selector(self.displayAlert), userInfo: nil, repeats: false)
         print(second)
 
