@@ -15,6 +15,10 @@
 		27DF468420089FC700A4BE49 /* SlackTimeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF468320089FC700A4BE49 /* SlackTimeTests.swift */; };
 		27DF468F20089FC700A4BE49 /* SlackTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF468E20089FC700A4BE49 /* SlackTimeUITests.swift */; };
 		27DF469F2008A9B700A4BE49 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF469E2008A9B700A4BE49 /* NextViewController.swift */; };
+		27FE8AEB2009D77500FF872C /* DOCOMOSDKCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27FE8AE72009D73F00FF872C /* DOCOMOSDKCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		27FE8AED2009D77500FF872C /* DOCOMOSDKDialogue.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 27FE8AE62009D73F00FF872C /* DOCOMOSDKDialogue.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		27FE8AF02009D79900FF872C /* DOCOMOSDKCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FE8AE72009D73F00FF872C /* DOCOMOSDKCommon.framework */; };
+		27FE8AF12009D79900FF872C /* DOCOMOSDKDialogue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27FE8AE62009D73F00FF872C /* DOCOMOSDKDialogue.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		27FE8AEE2009D77500FF872C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				27FE8AED2009D77500FF872C /* DOCOMOSDKDialogue.framework in Embed Frameworks */,
+				27FE8AEB2009D77500FF872C /* DOCOMOSDKCommon.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		27DF466B20089FC700A4BE49 /* SlackTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlackTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27DF466E20089FC700A4BE49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +68,8 @@
 		27DF468E20089FC700A4BE49 /* SlackTimeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlackTimeUITests.swift; sourceTree = "<group>"; };
 		27DF469020089FC700A4BE49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27DF469E2008A9B700A4BE49 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		27FE8AE62009D73F00FF872C /* DOCOMOSDKDialogue.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DOCOMOSDKDialogue.framework; path = vendor/DOCOMOSDKDialogue.framework; sourceTree = SOURCE_ROOT; };
+		27FE8AE72009D73F00FF872C /* DOCOMOSDKCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DOCOMOSDKCommon.framework; path = vendor/DOCOMOSDKCommon.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27FE8AF02009D79900FF872C /* DOCOMOSDKCommon.framework in Frameworks */,
+				27FE8AF12009D79900FF872C /* DOCOMOSDKDialogue.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +106,7 @@
 				27DF468220089FC700A4BE49 /* SlackTimeTests */,
 				27DF468D20089FC700A4BE49 /* SlackTimeUITests */,
 				27DF466C20089FC700A4BE49 /* Products */,
+				27FE8AEF2009D79900FF872C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +130,8 @@
 				27DF467520089FC700A4BE49 /* Assets.xcassets */,
 				27DF467720089FC700A4BE49 /* LaunchScreen.storyboard */,
 				27DF467A20089FC700A4BE49 /* Info.plist */,
+				27FE8AE72009D73F00FF872C /* DOCOMOSDKCommon.framework */,
+				27FE8AE62009D73F00FF872C /* DOCOMOSDKDialogue.framework */,
 			);
 			path = SlackTime;
 			sourceTree = "<group>";
@@ -128,6 +154,13 @@
 			path = SlackTimeUITests;
 			sourceTree = "<group>";
 		};
+		27FE8AEF2009D79900FF872C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -138,6 +171,7 @@
 				27DF466720089FC700A4BE49 /* Sources */,
 				27DF466820089FC700A4BE49 /* Frameworks */,
 				27DF466920089FC700A4BE49 /* Resources */,
+				27FE8AEE2009D77500FF872C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -432,6 +466,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FJV559UR87;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/vendor";
 				INFOPLIST_FILE = SlackTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Km.SlackTime;
@@ -447,6 +482,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FJV559UR87;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/vendor";
 				INFOPLIST_FILE = SlackTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Km.SlackTime;
