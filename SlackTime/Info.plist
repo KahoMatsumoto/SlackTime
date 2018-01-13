@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<string>ja_JP</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -41,9 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSMicrophoneUsageDescription</key>
-    <string>マイクの用途について記載します。</string>
-    <key>NSSpeechRecognitionUsageDescription</key>
-    <string>音声認識の用途について記載します。</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>マイクの用途について記載します。</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>音声認識の用途について記載します。</string>
 </dict>
 </plist>
