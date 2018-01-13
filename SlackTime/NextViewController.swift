@@ -21,6 +21,8 @@ class NextViewController: UIViewController, AVSpeechSynthesizerDelegate{
     @IBOutlet weak var Usertalk: UILabel!
     @IBOutlet weak var Userbtn: UIButton!
     
+    var timer: Timer?
+    
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "ja-JP"))!
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
@@ -48,6 +50,7 @@ class NextViewController: UIViewController, AVSpeechSynthesizerDelegate{
         let datePicker = UIDatePicker()
         
         datePicker.datePickerMode = UIDatePickerMode.time
+        //datePicker.maximumDate = 
         
         datePicker.addTarget(self, action: #selector(NextViewController.datePickerValueChanged(sender:)), for: UIControlEvents.valueChanged)
         
@@ -69,7 +72,30 @@ class NextViewController: UIViewController, AVSpeechSynthesizerDelegate{
         
         dateTextField.text = formatter.string(from: sender.date)
         
+
         
+        let second = sender.date.secondsFrom()
+        //Timer.scheduledTimer(timeInterval: TimeInterval(second), target: self, selector: #selector(self.displayAlert), userInfo: nil, repeats: false)
+        self.timer = Timer.scheduledTimer(timeInterval: TimeInterval(second), target: self, selector: #selector(self.displayAlert), userInfo: nil, repeats: false)
+        print(second)
+
+        
+        
+    }
+    @objc func displayAlert(){
+        let alertController = UIAlertController(
+            title: "ねるじかん１時間前だよ",
+            message: "ほどほどにね〜",
+            preferredStyle: .alert
+        )
+        alertController.addAction(UIAlertAction(
+            title: "OK",
+            style: .default,
+            handler: { action in print("わかりました〜") } )
+        )
+        
+        present(alertController, animated: true, completion: nil)
+        print("発火")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -270,5 +296,17 @@ extension NextViewController: SFSpeechRecognizerDelegate {
             print("\(sdkError!)")
         }
     }
+}
+extension Date {
+    
+    func offsetFrom() -> Int {
+        if secondsFrom() > 0 { return secondsFrom() }
+        return 0
+    }
+    
+    func secondsFrom() -> Int {
+        return Calendar.current.dateComponents([.second], from: Date(), to: self).second ?? 0
+    }
+    
 }
 
