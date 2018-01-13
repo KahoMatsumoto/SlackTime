@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27719F662009F8B00005E7B7 /* buttonExit.png in Resources */ = {isa = PBXBuildFile; fileRef = 27719F642009F8B00005E7B7 /* buttonExit.png */; };
+		27719F672009F8B00005E7B7 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 27719F652009F8B00005E7B7 /* heart.png */; };
 		27DF466F20089FC700A4BE49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF466E20089FC700A4BE49 /* AppDelegate.swift */; };
 		27DF467120089FC700A4BE49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF467020089FC700A4BE49 /* ViewController.swift */; };
 		27DF467420089FC700A4BE49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27DF467220089FC700A4BE49 /* Main.storyboard */; };
@@ -54,6 +56,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		27719F642009F8B00005E7B7 /* buttonExit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonExit.png; sourceTree = "<group>"; };
+		27719F652009F8B00005E7B7 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
 		27DF466B20089FC700A4BE49 /* SlackTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlackTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27DF466E20089FC700A4BE49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27DF467020089FC700A4BE49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +103,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27719F632009F8510005E7B7 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				27719F642009F8B00005E7B7 /* buttonExit.png */,
+				27719F652009F8B00005E7B7 /* heart.png */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
 		27DF466220089FC700A4BE49 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +136,7 @@
 		27DF466D20089FC700A4BE49 /* SlackTime */ = {
 			isa = PBXGroup;
 			children = (
+				27719F632009F8510005E7B7 /* img */,
 				27DF466E20089FC700A4BE49 /* AppDelegate.swift */,
 				27DF467020089FC700A4BE49 /* ViewController.swift */,
 				27DF469E2008A9B700A4BE49 /* NextViewController.swift */,
@@ -270,6 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				27DF467920089FC700A4BE49 /* LaunchScreen.storyboard in Resources */,
+				27719F662009F8B00005E7B7 /* buttonExit.png in Resources */,
+				27719F672009F8B00005E7B7 /* heart.png in Resources */,
 				27DF467620089FC700A4BE49 /* Assets.xcassets in Resources */,
 				27DF467420089FC700A4BE49 /* Main.storyboard in Resources */,
 			);
