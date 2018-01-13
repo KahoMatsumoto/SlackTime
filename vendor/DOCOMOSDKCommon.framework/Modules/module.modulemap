@@ -1,0 +1,6 @@
+framework module DOCOMOSDKCommon {
+  umbrella header "DOCOMOSDKCommon.h"
+
+  export *
+  module * { export * }
+}

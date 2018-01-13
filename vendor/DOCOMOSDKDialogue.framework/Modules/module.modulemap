@@ -1,0 +1,6 @@
+framework module DOCOMOSDKDialogue {
+  umbrella header "DOCOMOSDKDialogue.h"
+
+  export *
+  module * { export * }
+}
