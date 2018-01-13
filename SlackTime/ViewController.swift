@@ -14,6 +14,23 @@ class ViewController: UIViewController {
         
     }
 
+    @IBAction func start(_ sender: Any) {
+        
+        let alertController = UIAlertController(
+            title: "スマホをセットしてください",
+            message: "",
+            preferredStyle: .alert
+        )
+        
+        //「OK」を押すと次のページに遷移
+        let startAction = UIAlertAction(title: "OK", style: .default) { (action:UIAlertAction!) -> Void in
+            let next = self.storyboard?.instantiateViewController(withIdentifier: "nextView")
+            self.present(next!,animated: true, completion: nil)
+        }
+        
+        alertController.addAction(startAction)
+        present(alertController, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
