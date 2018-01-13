@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import AVFoundation
 
-class NextViewController: UIViewController {
+class NextViewController: UIViewController, AVSpeechSynthesizerDelegate{
     @IBOutlet weak var dateTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        utter(str:"お疲れ様です　今日は何を飲みますか？")//メソッド呼び出し
         // Do any additional setup after loading the view.
         
         let datePicker = UIDatePicker()
@@ -45,6 +47,30 @@ class NextViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+    
+    func utter(str:String) {
+        let speech = AVSpeechSynthesizer()
+        let utterance = AVSpeechUtterance(string: str)//読み上げる文字
+        utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")//読み上げの言語
+        utterance.rate = 0.5 //読み上げの速度
+        utterance.pitchMultiplier = 1.1 //声の高さ
+        utterance.preUtteranceDelay = 0 //読み上げまでの待機時間
+        utterance.postUtteranceDelay = 1 //読んだあとの待機時間
+        speech.delegate = self
+        
+        speech.speak(utterance) //発話
+    }
+    
+    // デリゲート
+    // 読み上げ開始したときに呼ばれる
+    internal func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didStart utterance: AVSpeechUtterance) {
+        print("読み上げ開始")
+    }
+    
+    // 読み上げ終了したときに呼ばれる
+    internal func speechSynthesizer(_ synthesizer: AVSpeechSynthesizer, didFinish utterance: AVSpeechUtterance) {
+        print("読み上げ終了")
     }
     
     /*
