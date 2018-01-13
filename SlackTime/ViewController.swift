@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBAction func start(_ sender: Any) {
         
         let alertController = UIAlertController(
-            title: "スマホをセットしてください",
+            title: "スマホをぬいぐるみにセットしてください",
             message: "",
             preferredStyle: .alert
         )

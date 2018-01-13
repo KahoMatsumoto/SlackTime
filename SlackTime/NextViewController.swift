@@ -28,23 +28,28 @@ class NextViewController: UIViewController, AVSpeechSynthesizerDelegate{
     private var recognitionTask: SFSpeechRecognitionTask?
     private let audioEngine = AVAudioEngine()
     
+    var param = DialogueRequestParam()
+    var dialogue = Dialogue()
+    var sdkError = SdkError()
     //雑談APIの設定
     //質問文問い合わせリクエスト
-    var param: DialogueRequestParam!
-    //雑談対話問い合わせ処理
-    var dialogue: Dialogue!
+//    var param: DialogueRequestParam!
+//    //雑談対話問い合わせ処理
+//    var dialogue: Dialogue!
     //回答データ
     var resultData: DialogueResultData!
     //エラー情報
-    var sdkError: SdkError!
+//    var sdkError: SdkError!
     //var talker: AVSpeechSynthesizer!
     //音声認識の結果、認識した文字列
     var voice = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        utter(str:"お疲れ様です　今日は何を飲みますか？")//メソッド呼び出し
+        heartbeat()
+        let first = "お疲れ様です 今日も一緒に宅飲みしましょう"
+        utter(str:first)//メソッド呼び出し
+        AItalk.text = first
         // Do any additional setup after loading the view.
         
         let datePicker = UIDatePicker()
@@ -62,6 +67,21 @@ class NextViewController: UIViewController, AVSpeechSynthesizerDelegate{
         dateTextField.inputView = datePicker
     }
     
+    @IBOutlet weak var imageView: UIImageView!
+    func heartbeat() {
+        let image1 = UIImage(named: "heart.png")
+        imageView.image=image1
+        //self.imageView.center = self.view.center
+        UIView.animate(withDuration: 1.0, delay: 0.0, options:UIViewAnimationOptions(rawValue: 0), animations: {
+            self.imageView.transform = CGAffineTransform(scaleX: 1.5, y:1.5)
+        }, completion: { finished in
+            UIView.animate(withDuration: 1.0, delay: 0.0, options:UIViewAnimationOptions(rawValue: 0), animations: {
+                self.imageView.transform = CGAffineTransform(scaleX: 1.0, y:1.0)
+            }, completion: { finished in
+                self.heartbeat()
+            })
+        })
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -273,12 +293,12 @@ extension NextViewController: SFSpeechRecognizerDelegate {
         //docomo Developer supportから取得したAPIキーを設定
         AuthApiKey.initializeAuth("79705866567a64506554337741335543613169765243677258464b6b544454687039492e69334f5072392e")
         
-        param = DialogueRequestParam()
-        dialogue = Dialogue()
-        sdkError = SdkError()
+//        param = DialogueRequestParam()
+//        dialogue = Dialogue()
+//        sdkError = SdkError()
         //talker = AVSpeechSynthesizer()
         //発話を設定
-        param.utt = voice
+        param?.utt = voice
         //APIのキャラクタ設定(デフォルト:ゼロ,20:桜子,30:ハヤテ)
         //param.character = 0
         
@@ -288,9 +308,15 @@ extension NextViewController: SFSpeechRecognizerDelegate {
          AVSpeechSynthesizerで読み上げる.
          コンテキストID(resultData.context)を使うことで継続した会話ができる.
          */
-        dialogue.request(param, onComplete: { (resultData) -> Void in
-            self.param.context = "\(resultData!.context)"
+        dialogue!.request(param, onComplete: { (resultData) -> Void in
+            if self.param?.context==nil{
+                self.param?.context = "\(resultData!.context)"
+            } else {
+                self.param?.context = resultData!.context
+            }
             self.AItalk.text = resultData!.yomi
+            self.param?.mode = resultData!.mode
+            self.utter(str:resultData!.yomi)
             // let utterance = AVSpeechUtterance(string: "\(resultData!.yomi)")
             //utterance.voice = AVSpeechSynthesisVoice(language: "jp-JP")
             //utterance.rate = 0.2
