@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		27719F662009F8B00005E7B7 /* buttonExit.png in Resources */ = {isa = PBXBuildFile; fileRef = 27719F642009F8B00005E7B7 /* buttonExit.png */; };
 		27719F672009F8B00005E7B7 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 27719F652009F8B00005E7B7 /* heart.png */; };
+		27D3740E200AE38100F46FB4 /* icon_image_yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D3740D200AE38000F46FB4 /* icon_image_yellow.png */; };
+		27D37410200B004D00F46FB4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27D3740F200B004D00F46FB4 /* AVFoundation.framework */; };
+		27D37412200B068E00F46FB4 /* animal_yopparai_kuma.png in Resources */ = {isa = PBXBuildFile; fileRef = 27D37411200B068E00F46FB4 /* animal_yopparai_kuma.png */; };
 		27DF466F20089FC700A4BE49 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF466E20089FC700A4BE49 /* AppDelegate.swift */; };
 		27DF467120089FC700A4BE49 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DF467020089FC700A4BE49 /* ViewController.swift */; };
 		27DF467420089FC700A4BE49 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27DF467220089FC700A4BE49 /* Main.storyboard */; };
@@ -58,6 +61,9 @@
 /* Begin PBXFileReference section */
 		27719F642009F8B00005E7B7 /* buttonExit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonExit.png; sourceTree = "<group>"; };
 		27719F652009F8B00005E7B7 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		27D3740D200AE38000F46FB4 /* icon_image_yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_image_yellow.png; sourceTree = "<group>"; };
+		27D3740F200B004D00F46FB4 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		27D37411200B068E00F46FB4 /* animal_yopparai_kuma.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = animal_yopparai_kuma.png; sourceTree = "<group>"; };
 		27DF466B20089FC700A4BE49 /* SlackTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlackTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27DF466E20089FC700A4BE49 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27DF467020089FC700A4BE49 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27D37410200B004D00F46FB4 /* AVFoundation.framework in Frameworks */,
 				27FE8AF02009D79900FF872C /* DOCOMOSDKCommon.framework in Frameworks */,
 				27FE8AF12009D79900FF872C /* DOCOMOSDKDialogue.framework in Frameworks */,
 			);
@@ -106,6 +113,8 @@
 		27719F632009F8510005E7B7 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				27D37411200B068E00F46FB4 /* animal_yopparai_kuma.png */,
+				27D3740D200AE38000F46FB4 /* icon_image_yellow.png */,
 				27719F642009F8B00005E7B7 /* buttonExit.png */,
 				27719F652009F8B00005E7B7 /* heart.png */,
 			);
@@ -171,6 +180,7 @@
 		27FE8AEF2009D79900FF872C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				27D3740F200B004D00F46FB4 /* AVFoundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -283,7 +293,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27D3740E200AE38100F46FB4 /* icon_image_yellow.png in Resources */,
 				27DF467920089FC700A4BE49 /* LaunchScreen.storyboard in Resources */,
+				27D37412200B068E00F46FB4 /* animal_yopparai_kuma.png in Resources */,
 				27719F662009F8B00005E7B7 /* buttonExit.png in Resources */,
 				27719F672009F8B00005E7B7 /* heart.png in Resources */,
 				27DF467620089FC700A4BE49 /* Assets.xcassets in Resources */,
@@ -482,13 +494,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FJV559UR87;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/vendor";
 				INFOPLIST_FILE = SlackTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Km.SlackTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -498,13 +511,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FJV559UR87;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/vendor";
 				INFOPLIST_FILE = SlackTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Km.SlackTime;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

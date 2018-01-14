@@ -113,7 +113,7 @@ class NextViewController: UIViewController, AVSpeechSynthesizerDelegate{
             preferredStyle: .alert
         )
         alertController.addAction(UIAlertAction(
-            title: "OK",
+            title: "わかりました〜",
             style: .default,
             handler: { action in print("わかりました〜") } )
         )
@@ -213,8 +213,16 @@ extension NextViewController: SFSpeechRecognizerDelegate {
         refreshTask()
         
         let audioSession = AVAudioSession.sharedInstance()
+        
+//        do {
+//            try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+//            try audioSession.setActive(false, with: .notifyOthersOnDeactivation)
+//        } catch {
+//            // handle errors
+//        }
+        
         // 録音用のカテゴリをセット
-        try audioSession.setCategory(AVAudioSessionCategoryRecord)
+        try audioSession.setCategory(AVAudioSessionCategoryPlayAndRecord)
         try audioSession.setMode(AVAudioSessionModeMeasurement)
         try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
         
@@ -315,8 +323,10 @@ extension NextViewController: SFSpeechRecognizerDelegate {
                 self.param?.context = resultData!.context
             }
             self.AItalk.text = resultData!.yomi
+            
             self.param?.mode = resultData!.mode
             self.utter(str:resultData!.yomi)
+            print(resultData!.yomi)
             // let utterance = AVSpeechUtterance(string: "\(resultData!.yomi)")
             //utterance.voice = AVSpeechSynthesisVoice(language: "jp-JP")
             //utterance.rate = 0.2
