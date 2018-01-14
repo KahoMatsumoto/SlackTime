@@ -36,24 +36,23 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Slack Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9D-EF-ilA">
-                                <rect key="frame" x="103" y="260" width="168" height="83"/>
+                                <rect key="frame" x="103" y="283" width="168" height="83"/>
                                 <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="54"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpK-Pd-FxO">
-                                <rect key="frame" x="141" y="366.5" width="93" height="54"/>
-                                <fontDescription key="fontDescription" name="SavoyeLetPlain" family="Savoye LET" pointSize="35"/>
-                                <state key="normal" title="START"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="animal_yopparai_kuma.png" translatesAutoresizingMaskIntoConstraints="NO" id="1uQ-VG-7NW">
+                                <rect key="frame" x="67" y="70" width="240" height="205"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cpK-Pd-FxO">
+                                <rect key="frame" x="39" y="412" width="298" height="70"/>
+                                <state key="normal" title="START" image="startbutton.png"/>
                                 <connections>
                                     <action selector="start:" destination="BYZ-38-t0r" eventType="touchDown" id="CTf-70-JFv"/>
                                     <segue destination="e5Z-Wi-CFG" kind="presentation" id="9QE-Bn-ley"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="animal_yopparai_kuma.png" translatesAutoresizingMaskIntoConstraints="NO" id="1uQ-VG-7NW">
-                                <rect key="frame" x="67" y="70" width="240" height="205"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -186,5 +185,6 @@
     <resources>
         <image name="animal_yopparai_kuma.png" width="800" height="800"/>
         <image name="buttonExit.png" width="275" height="105"/>
+        <image name="startbutton.png" width="395" height="90"/>
     </resources>
 </document>
